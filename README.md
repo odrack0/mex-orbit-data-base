@@ -42,6 +42,20 @@ Reglas:
 | `mex-orbit-game-server` / `mex-orbit-api` | Consumidores del esquema; sus despliegues declaran qué versión de migración requieren |
 | `mex-orbit-docs` | El pilar 02-base-de-datos define el esquema; aquí se ejecuta |
 
+## Migraciones aplicadas
+
+| Versión | Qué trae |
+|---|---|
+| `2026.08.25.1` | Estructura núcleo del vertical slice + semilla del catálogo (items, naves, NPCs, mapa 1-1, recetas, precios) |
+| `2026.08.25.2` | Stats jugables del Vex (800/400): el seed original daba un TTK de >3 min con el ION-1 |
+| `2026.08.25.3` | El portal del 1-1 + el mapa vecino `1-2` que exige su FK. `map_portal.target_map_id` es FK real, así que **crear un portal implica crear su destino**: `1-2` queda declarado sin estación ni spawns, y el salto llega en E3 |
+
+Correr una versión contra el MySQL de dev:
+
+```bash
+.\tools\migrate.ps1 -Version 2026.08.25.3
+```
+
 ## Estado
 
-Repo recién creado. Primer paso: el documento de diseño del esquema (pilar) → la migración `.1` inicial (estructura núcleo del vertical slice).
+Esquema núcleo del vertical slice en pie y en uso por `mex-orbit-api` y `mex-orbit-game-server`.
