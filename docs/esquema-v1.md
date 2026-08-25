@@ -127,7 +127,24 @@ economy_ledger (append-only) · server_setting + audit · schema_migration
 
 - `rollout.sql`: crea `schema_migration` + las 25 tablas del slice + semillas (categorías, credits + 4 materiales, ION-1/NAN-1, Phoenix, mapa 1-1 con base y portal de práctica, Vex con spawn ×15, sesgos de zona, receta, precios NPC, settings). Todos los números marcados **provisionales** hasta la pasada de balanceo (E6).
 - `rollback.sql`: revierte todo en orden inverso de dependencias, incluida su fila de `schema_migration`.
-- Verificación (iteración I3 del plan de etapa): MySQL 8 limpio → rollout → rollback → rollout, sin errores ni residuos.
+
+### Corrida de verificación (I3) — ✅ 2026-08-25
+
+Contra **MySQL 8.4.11 LTS** limpio (dev local): rollout → **29 tablas** creadas, semillas verificadas
+(7 items de catálogo, 9 sesgos de zona, 3 ingredientes de receta, versión registrada) → rollback → **0 tablas,
+sin residuos** → rollout de nuevo → 29 tablas y semillas íntegras. **La migración es aplicable y reversible.**
+
+### El MySQL de desarrollo local
+
+La máquina de dev tiene una MariaDB 10.1 legada en el puerto 3306 (el prototipo); **no se toca**. El motor de
+v1 corre aparte, portable y sin servicio:
+
+- Instalación: ZIP oficial `mysql-8.4.11-winx64` extraído en `C:\Tools\mysql8` (sin instalador, sin servicio).
+- Arranque/apagado: [`tools/dev-mysql.ps1`](../tools/dev-mysql.ps1) (puerto **3307**, root sin contraseña —
+  solo dev local; el datadir se inicializa solo la primera vez).
+- Migraciones: [`tools/migrate.ps1`](../tools/migrate.ps1) `-Version AAAA.MM.DD.N [-Rollback]` sobre la BD
+  `mexorbit_dev`. Es el runner mínimo de E1; el definitivo (aplicación ordenada de N versiones, verificación
+  del registro) llega con E2.
 
 ## 7. Dominios futuros (E3+, sin tablas en v1)
 
