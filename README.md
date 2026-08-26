@@ -50,7 +50,7 @@ Reglas:
 | `2026.08.25.2` | Stats jugables del Vex (800/400): el seed original daba un TTK de >3 min con el ION-1 |
 | `2026.08.25.3` | El portal del 1-1 + el mapa vecino `1-2` que exige su FK. `map_portal.target_map_id` es FK real, así que **crear un portal implica crear su destino**: `1-2` queda declarado sin estación ni spawns, y el salto llega en E3 |
 | `2026.08.25.4` | Vexor y Skarn en el 1-1: el bestiario pasa a tres (15 Vex, 8 Vexor, 5 Skarn). Stats derivados del TTK con el ION-1 del arranque |
-| `2026.08.25.5` | **Sin aplicar** — Ferox y Skarnox: el bestiario llega a cinco. Espera sus renders. Anota la deuda del TTK: 47 s para el Skarnox porque el ION-1 es el único láser del catálogo |
+| `2026.08.25.5` | Ferox y Skarnox: el bestiario del 1-1 llega a cinco (15/8/5/4/2). Escalera de TTK 10 · 20 · 27 · 33 · 47 s. **Deuda anotada**: 47 s es largo porque el ION-1 es el único láser del catálogo — la cima pide una segunda grada de láser, no bichos más flojos |
 
 Correr una versión contra el MySQL de dev:
 
