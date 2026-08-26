@@ -54,6 +54,7 @@ Reglas:
 | `2026.08.25.6` | Enciende `is_aggressive` en el Ferox (el único cazador del 1-1) y añade `CARGO_LOST` al ledger, para asentar la bodega que se queda flotando al morir |
 | `2026.08.25.7` | Primera calibración del daño de los NPCs (25–75). Los valores previos nunca se probaron contra un jugador: al encender la IA, el autotest moría en ~15 s contra un solo Ferox |
 | `2026.08.25.8` | Bodega de la Phoenix 100 → 300. Con 100 te llenabas cada dos Vex y las cajas del Ferox/Skarnox ni cabían: el sobrante se evaporaba al expirar la caja, y los materiales solo salen de esas cajas |
+| `2026.08.25.9` | **Sin aplicar** — Gravit y Mordax: el bestiario llega a siete. Espera sus renders. Ninguno sube el techo del mapa: caen dentro de la banda existente (15 s y 30 s de TTK) |
 
 Correr una versión contra el MySQL de dev:
 
