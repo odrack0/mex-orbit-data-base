@@ -56,6 +56,7 @@ Reglas:
 | `2026.08.25.8` | Bodega de la Phoenix 100 → 300. Con 100 te llenabas cada dos Vex y las cajas del Ferox/Skarnox ni cabían: el sobrante se evaporaba al expirar la caja, y los materiales solo salen de esas cajas |
 | `2026.08.25.9` | Gravit y Mordax: el bestiario del 1-1 llega a siete (48 bichos). Ninguno sube el techo del mapa — caen dentro de la banda existente (15 s y 30 s de TTK) |
 | `2026.08.25.10` | Gravon y Vorax: nueve especies en el 1-1 (54 bichos) + columna `flee_hp_pct`. El Vorax huye por debajo del 30% de casco — primer NPC con conducta, no solo estadísticas |
+| `2026.08.25.11` | Interruptor `npc_combat_enabled` en `server_setting`, **apagado** por ahora: los NPC vagabundean, fichan y persiguen, pero no hacen daño |
 
 Correr una versión contra el MySQL de dev:
 
