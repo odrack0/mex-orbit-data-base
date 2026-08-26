@@ -51,6 +51,8 @@ Reglas:
 | `2026.08.25.3` | El portal del 1-1 + el mapa vecino `1-2` que exige su FK. `map_portal.target_map_id` es FK real, así que **crear un portal implica crear su destino**: `1-2` queda declarado sin estación ni spawns, y el salto llega en E3 |
 | `2026.08.25.4` | Vexor y Skarn en el 1-1: el bestiario pasa a tres (15 Vex, 8 Vexor, 5 Skarn). Stats derivados del TTK con el ION-1 del arranque |
 | `2026.08.25.5` | Ferox y Skarnox: el bestiario del 1-1 llega a cinco (15/8/5/4/2). Escalera de TTK 10 · 20 · 27 · 33 · 47 s. **Deuda anotada**: 47 s es largo porque el ION-1 es el único láser del catálogo — la cima pide una segunda grada de láser, no bichos más flojos |
+| `2026.08.25.6` | Enciende `is_aggressive` en el Ferox (el único cazador del 1-1) y añade `CARGO_LOST` al ledger, para asentar la bodega que se queda flotando al morir |
+| `2026.08.25.7` | Primera calibración del daño de los NPCs (25–75). Los valores previos nunca se probaron contra un jugador: al encender la IA, el autotest moría en ~15 s contra un solo Ferox |
 
 Correr una versión contra el MySQL de dev:
 
