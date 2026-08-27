@@ -67,3 +67,32 @@ Correr una versión contra el MySQL de dev:
 ## Estado
 
 Esquema núcleo del vertical slice en pie y en uso por `mex-orbit-api` y `mex-orbit-game-server`.
+
+## Despliegue
+
+Producción usa la base `astrion` en el MySQL del servidor (3306, no el 3307 de dev) con un usuario
+propio, `astrion`. Nunca `root`: es el mismo patrón que ya seguía el prototipo.
+
+```bash
+DB=astrion ./tools/migrate.sh --estado     # qué falta, sin tocar nada
+DB=astrion ./tools/migrate.sh              # aplica todas las pendientes, en orden
+mysql astrion < deploy/produccion.sql      # y SIEMPRE esto después
+```
+
+`migrate.ps1` sigue existiendo para dev y aplica **una** versión; `migrate.sh` aplica **todas las
+pendientes**, y esa es la razón de que exista: en producción nadie va a teclear treinta versiones a
+mano sin saltarse una. El orden sale del nombre de la carpeta con `sort -V`, no con un `sort`
+normal — ya hay una `2026.08.25.10`, y un `sort` normal la pondría antes que la `.2`.
+
+### `deploy/produccion.sql` no es opcional
+
+Lleva lo que depende de la **máquina** y no del esquema. Hoy es `map_server`: la migración lo siembra
+en `127.0.0.1:5200` sin TLS, que es correcto en dev y **una bomba en producción**. El host del salto
+de sector sale de esa tabla, no del que usó el cliente para entrar, así que el juego entraría bien y
+fallaría justo al cambiar de mapa.
+
+Es el fallo más caro de diagnosticar de todo el despliegue, porque no aparece hasta el segundo mapa
+y todo lo demás funciona. Por eso el script termina contando cuántas filas siguen apuntando a dev:
+la respuesta correcta es cero.
+
+Es idempotente, y hay que correrlo **después de cada migración que toque `map` o `map_server`**.
