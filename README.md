@@ -73,7 +73,16 @@ Esquema núcleo del vertical slice en pie y en uso por `mex-orbit-api` y `mex-or
 Producción usa la base `astrion` en el MySQL del servidor (3306, no el 3307 de dev) con un usuario
 propio, `astrion`. Nunca `root`: es el mismo patrón que ya seguía el prototipo.
 
+Los tres comandos se corren **en el servidor**, sobre el clon de
+`/home/astrion/mex-orbit-v1/mex-orbit-data-base`. MySQL solo escucha en `127.0.0.1` y así debe
+seguir, así que no hay forma de correrlos desde el PC sin un túnel — y correrlos aquí sin `DB=`
+apuntaría a la base de dev, que es exactamente el accidente que esta nota evita.
+
 ```bash
+ssh root@74.208.108.67
+cd /home/astrion/mex-orbit-v1/mex-orbit-data-base
+git pull
+
 DB=astrion ./tools/migrate.sh --estado     # qué falta, sin tocar nada
 DB=astrion ./tools/migrate.sh              # aplica todas las pendientes, en orden
 mysql astrion < deploy/produccion.sql      # y SIEMPRE esto después
