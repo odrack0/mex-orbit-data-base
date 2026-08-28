@@ -57,6 +57,9 @@ Reglas:
 | `2026.08.25.9` | Gravit y Mordax: el bestiario del 1-1 llega a siete (48 bichos). Ninguno sube el techo del mapa — caen dentro de la banda existente (15 s y 30 s de TTK) |
 | `2026.08.25.10` | Gravon y Vorax: nueve especies en el 1-1 (54 bichos) + columna `flee_hp_pct`. El Vorax huye por debajo del 30% de casco — primer NPC con conducta, no solo estadísticas |
 | `2026.08.25.11` | Interruptor `npc_combat_enabled` en `server_setting`, **apagado** por ahora: los NPC vagabundean, fichan y persiguen, pero no hacen daño |
+| `2026.08.26.1` | El sistema estelar: 29 mapas y 42 puertas (84 portales), extraidos del arte del mapa estelar y validados por el recuento J1..J42 y la simetria de las tres facciones |
+| `2026.08.26.2` | La llegada del salto pasa a ser la posicion EXACTA del portal de vuelta, y `map_server` dice donde vive cada mapa (hoy todos al mismo sitio; partirlos manana es cambiar filas) |
+| `2026.08.28.1` | Diales de la **relevancia por rango**: `render_range_entities` (2000), `render_range_objects` (1250) y `render_range_hysteresis_pct` (10). El cliente deja de recibir el sector entero |
 
 Correr una versión contra el MySQL de dev:
 
