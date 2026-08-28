@@ -60,6 +60,7 @@ Reglas:
 | `2026.08.26.1` | El sistema estelar: 29 mapas y 42 puertas (84 portales), extraidos del arte del mapa estelar y validados por el recuento J1..J42 y la simetria de las tres facciones |
 | `2026.08.26.2` | La llegada del salto pasa a ser la posicion EXACTA del portal de vuelta, y `map_server` dice donde vive cada mapa (hoy todos al mismo sitio; partirlos manana es cambiar filas) |
 | `2026.08.28.1` | Diales de la **relevancia por rango**: `render_range_entities` (2000), `render_range_objects` (1250) y `render_range_hysteresis_pct` (10). El cliente deja de recibir el sector entero |
+| `2026.08.28.2` | Se **enciende** `npc_combat_enabled` y el daño de todas las especies baja a **10**. Los 25-85 se calibraron contra un jugador al que no se podia perseguir; con la persecucion arreglada, la dificultad esta sin medir y 10 es el suelo plano desde el que calibrar |
 
 Correr una versión contra el MySQL de dev:
 
