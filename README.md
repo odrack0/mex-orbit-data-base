@@ -61,6 +61,7 @@ Reglas:
 | `2026.08.26.2` | La llegada del salto pasa a ser la posicion EXACTA del portal de vuelta, y `map_server` dice donde vive cada mapa (hoy todos al mismo sitio; partirlos manana es cambiar filas) |
 | `2026.08.28.1` | Diales de la **relevancia por rango**: `render_range_entities` (2000), `render_range_objects` (1250) y `render_range_hysteresis_pct` (10). El cliente deja de recibir el sector entero |
 | `2026.08.28.2` | Se **enciende** `npc_combat_enabled` y el daño de todas las especies baja a **10**. Los 25-85 se calibraron contra un jugador al que no se podia perseguir; con la persecucion arreglada, la dificultad esta sin medir y 10 es el suelo plano desde el que calibrar |
+| `2026.09.02.1` | **Drony**: décima especie del 1-1 (mecánica, 900/600, velocidad 320, 6 unidades). Entra en la escalera entre Vex y Gravit (TTK 12,5 s). Stats provisionales, calibrados por la escalera, no en vivo |
 | `2026.09.01.1` | `player_ship_state.pos_x/pos_y` pasan a **INT con signo**: la zona radiactiva vive mas alla del limite por los cuatro lados y por el lado del 0 eso es negativo. Va de la mano del protocolo (`sint`) — game server, cliente y esta migracion se despliegan **juntos** |
 
 Correr una versión contra el MySQL de dev:
