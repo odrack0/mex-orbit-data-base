@@ -61,6 +61,7 @@ Reglas:
 | `2026.08.26.2` | La llegada del salto pasa a ser la posicion EXACTA del portal de vuelta, y `map_server` dice donde vive cada mapa (hoy todos al mismo sitio; partirlos manana es cambiar filas) |
 | `2026.08.28.1` | Diales de la **relevancia por rango**: `render_range_entities` (2000), `render_range_objects` (1250) y `render_range_hysteresis_pct` (10). El cliente deja de recibir el sector entero |
 | `2026.08.28.2` | Se **enciende** `npc_combat_enabled` y el daño de todas las especies baja a **10**. Los 25-85 se calibraron contra un jugador al que no se podia perseguir; con la persecucion arreglada, la dificultad esta sin medir y 10 es el suelo plano desde el que calibrar |
+| `2026.09.02.6` | **ACI-05** (nombre temporal): decimocuarta especie del 1-1, ojo superior a proa (2100/1500, velocidad 280, 3 unidades), entre Skarn y Ferox (TTK 30 s). Stats provisionales |
 | `2026.09.02.5` | **ACI-04** (nombre temporal): decimotercera especie del 1-1, esfera blindada con tenazas (1800/1300, velocidad 250, 4 unidades), entre ACI-03 y Skarn (TTK 25,8 s). Stats provisionales |
 | `2026.09.02.4` | **ACI-03** (nombre temporal): duodécima especie del 1-1, media luna rápida (1500/1100, velocidad 340, 4 unidades), entre Vexor y Skarn (TTK 21,7 s). Stats provisionales |
 | `2026.09.02.3` | **ACI-02** (nombre temporal): undécima especie del 1-1, platillo con tentáculos (1200/800, velocidad 260, 5 unidades), entre Gravit y Vexor (TTK 16,7 s). Stats provisionales |
